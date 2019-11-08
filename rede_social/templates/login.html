@@ -1,0 +1,65 @@
+<html lang="pt">
+
+    <title>Projeto Follow</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      #menu a{
+          color:white;
+          background-color: blueviolet;
+          padding-bottom: 7px;
+          margin-bottom: 7px;
+          margin-right: 3px;
+      }
+     .jumbotron.body{
+        background-color: blue; 
+        color:white;
+        background-image: linear-gradient(black,blue,black);
+    }
+  </style>
+  
+
+  <header>
+        <div class="jumbotron text-center">
+
+        </div>
+        
+  </header>
+  <body>
+    
+    <div class="jumbotron body text-center">
+      <div class= "container mt -4">
+        <form action="submit", method="POST">{% csrf_token %}
+          <div class="form-group">
+            <label for="username" > Usuario: </label>
+            <input type="username", class="form-control" id="username" name="username" 
+            placeholder="">
+
+          </div>
+          <div class="form-group", title="center">
+              <label for="password"> Senha: </label>
+              <input type="password",class="form-control" id="password" name="password" 
+              placeholder="">
+  
+            </div>
+            <div>
+              {% for message in messages %}
+              <div class="alert alert-danger">
+                <strong>ERRO!   </strong> {{ message }}
+              </div>
+              {% endfor %}
+              <button type="submit" class="btn btn-primary" >Entrar</button>
+            </div>
+            
+        </form>
+      
+      </div>
+    </div>
+  </body>
+</html>
+
+

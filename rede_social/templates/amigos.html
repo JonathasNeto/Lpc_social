@@ -1,0 +1,33 @@
+{% extends "model-page.html" %}
+{% block content %}
+<div class="text-center mr-8 ">
+    <h3>Amigos</h3>
+</div>
+    <div class="container">
+        <div class="row">   
+            <div class="col-sm-4">
+                <div class="">  
+                    {% for p in perfil %}
+                        <div>
+                            <label for="">
+                                <p>{{ p.nome }}</p>
+                            </label>
+                        </div>
+                                        
+                    {% endfor %}
+                </div>
+               
+
+            </div>
+        </div>
+    </div>
+    <div>
+    <div class="text-right mr-4">
+        <a href="/">
+            <button type="button" class="btn btn-primary">Voltar</button>
+        </a>
+    </div>
+    
+
+</div>
+{% endblock%}
